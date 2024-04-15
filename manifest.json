@@ -1,0 +1,31 @@
+{
+    "name": "yt-productive",
+    "version": "1.0",
+    "description": "Don't get distracted by other youtube videos & recommended videos, while you are being productive!",
+    "manifest_version": 2,
+    "content_security_policy":"script-src 'self' 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'; object-src 'self'",
+    "background": {
+      "scripts": ["background.js","time.js"],
+
+      "persistent": false
+    },
+    "icons": { 
+      "16": "icons8-hard-working-16.png",
+      "48": "icons8-hard-working-48.png",
+     "128": "icons8-hard-working-100.png" 
+    },
+    "author":"deezman",
+    "content_scripts": [{
+      "js": ["content.js"],
+      "matches": ["https://www.youtube.com/*"]
+    }],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_title": "Be Productive!"
+    },
+    "permissions": [
+      "activeTab",
+      "storage",
+      "runtime"
+      ]
+}
